@@ -1,0 +1,186 @@
+// 슬라이드쇼 자세히보기 버튼
+.slide-btn {
+  position: relative;
+  width: 140px;
+  margin-top: 36px;
+  overflow: hidden;
+  &:hover {
+    .screen {
+      transform: none;
+    }
+    a {
+      color: #fff;
+    }
+  }
+  a {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border: 1px solid #000;
+    font-size: 14px;
+    background-color: transparent;
+    transition: all .5s;
+  }
+  .screen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: black;
+    transform: translateX(-100%);
+    transition: 0.4s;
+  }
+}
+
+//바로구매 버튼
+.buttons {
+  margin-top: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  transform: translateY(200px);
+  transition: .4s;
+  a {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    transition: all .7s;
+  }
+  .buy {
+    width: 114px;
+    margin-right: 10px;
+    font-size: 14px;
+    position: relative;
+    z-index: 3;
+    &:hover {
+      .icon-plus {
+        transform: scale(0);
+        transform-origin: 50%;
+      }
+    }
+    .icon-plus {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      width: 16px;
+      height: 16px;
+      background-color: #f5f6f7;
+      border-radius: 50%;
+      transition: 0.3s;
+      &::before,
+      &::after {
+        content: '';
+        width: 10px;
+        height: 1px;
+        background: #000;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+      &::before {
+        left: 1px;
+      }
+      &::after {
+        width: 1px;
+        height: 10px;
+        right: -1px;
+      }
+    }
+    .slide-plus {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      &:hover {
+        .screen {
+          transform: none;
+        }
+        &::before,
+        &::after {
+          transform: none;
+          opacity: 1;
+        }
+      }
+      .screen {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: #39b5b7;
+        transform: translateX(-100%);
+        transition: 0.4s;
+      }
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        margin: auto;
+        background-color: #fff;
+        opacity: 0;
+        transition: 0.3s;
+      }
+      &::before {
+        width: 18px;
+        height: 1px;
+        transform: translateX(-70px);
+      }
+      &::after {
+        width: 1px;
+        height: 18px;
+        transform: translateY(40px);
+      }
+    }
+  }
+  .favorite {
+    border-left: 0;
+  }
+}
+
+//라벨
+.labels {
+  position: absolute;
+  left: 0;
+  top: -30px;
+  background-color: rgba(255,255,255,0.8);
+  > div {
+    width: 44px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    text-transform: uppercase;
+    & + div {
+      margin-top: 4px;
+    }
+    &.new,
+    &.best {
+      border: 1px solid #000;
+      color: #222;
+    }
+    &.sale {
+      border: 1px solid #ea4545;
+      color: #ea4545;
+    }
+    &.gift {
+      border: 1px solid #999;
+      color: #999;
+    }
+  }
+}
