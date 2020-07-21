@@ -16,35 +16,59 @@ var drjart = {
     },
 
     slider: function () {
-        $('.visual, .product-slide, .main-slide').slick({
+        $('.visual,.product-slide,.main-slide').slick({
             autoplay: true,
             dots: true,
             infinite: true,
-            speed: 400,
+            speed: 1000,
             fade: true,
             arrows: false,
         });
-
         $('.story-slide').slick({
             prevArrow: $('.slick-prev'),
             nextArrow: $('.slick-next'),
         });
-
+        var slickCustomEvent = {
+            init : function(){
+                slickCustomEvent.initialize()
+                slickCustomEvent.beforeChange()
+                slickCustomEvent.afterChange()
+            },
+            initialize : function(){
+                var dataIndex = $('[data-slick-index="0"]');
+                dataIndex.find('h1,p,.slide-btn').addClass('fadeInUp');
+            },
+            beforeChange : function(){
+                $('.fade').on('beforeChange', function(event, slick, currentSlide){
+                    $('h1,p,.slide-btn').removeClass('fadeInUp');
+                })
+            },
+            afterChange : function(){
+                $('.fade').on('afterChange', function(event, slick, currentSlide){
+                    var dataIndex = $('[data-slick-index="' + currentSlide + '"');
+                    dataIndex.find('h1,p,.slide-btn').addClass('fadeInUp');
+                });
+            }
+        }
+        slickCustomEvent.init();
     },
 
     sliderNav: function () {
-        $('.slider-for').slick({
+        $('.visual-for').slick({
+            autoplay: true,
+            speed: 400,
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
             fade: true,
-            asNavFor: '.slider-nav'
+            asNavFor: '.visual-nav'
         });
-        $('.slider-nav').slick({
-            slidesToShow: 3,
+        $('.visual-nav').slick({
+            autoplay: true,
+            speed: 400,
+            slidesToShow: 4,
             slidesToScroll: 1,
-            asNavFor: '.slider-for',
-            dots: true,
+            asNavFor: '.visual-for',
             centerMode: true,
             focusOnSelect: true
         });
@@ -54,7 +78,7 @@ var drjart = {
         $('.all-menu').on('click', function () {
             $('html').toggleClass('open-side-menu');
         })
-        $('.side-nav .screen').on('click', function () {
+        $('.side-header .screen').on('click', function () {
             $('html').removeClass('open-side-menu')
         })
     },
@@ -84,18 +108,15 @@ var drjart = {
         });
 
         $('.type-select .name').on('click', function () {
-            $(this).next('.dropdown').slideDown();
+            $(this).next('.dropdown').slideToggle(500);
             $(this).next().siblings('.dropdown').slideUp();
         });
     },
 
     reviewSlide: function () {
-        $('.text-review .more').on('click', function () {
-            $(this).closest('.item').addClass('open-review');
+        $('.text-review .more,.description .close').on('click', function () {
+            $(this).closest('.item').toggleClass('open-review');
         });
-        $('.description .open').on('click', function () {
-            $(this).closest('.item').removeClass('open-review');
-        })
     },
 
     getScroll: function () {
@@ -109,11 +130,10 @@ var drjart = {
         })
     },
 
-
     renderProductBest: function () {
         const products = [
             {
-                a: "http://localhost:63342/drj/pages/detail.html?_ijt=6kpuc57cd6tbilqv9q7h05se9a",
+                a: "http://localhost:63342/drj/pages/detail.html?_ijt=h10rkv6egsps2qtjij1gsi40ib",
                 image: "../images/1560475092450.webp",
                 tags: "#탱글수분크림",
                 productName: "바이탈 하이드라 솔루션 바이옴 워터 크림",
@@ -124,7 +144,7 @@ var drjart = {
                 labels: ["new","best","gift"]
             },
             {
-                image: "../images/1587021615232.png",
+                image: "../images/1591672265339.webp",
                 tags: "#프라이머선크림",
                 productName: "솔라바이옴™프라이머 특별기획세트",
                 price: {
@@ -134,7 +154,7 @@ var drjart = {
                 labels: [],
             },
             {
-                image: "../images/1587723450681.png",
+                image: "../images/1587723450681.webp",
                 tags: "#시카베스트세트",
                 productName: "시카페어 취향저격 세트",
                 price: {
@@ -144,7 +164,7 @@ var drjart = {
                 labels: ["new", "best", "gift", "sale"],
             },
             {
-                image: "../images/1589418738580.png",
+                image: "../images/1589418738580.webp",
                 tags: '#233억에센스+톤업샷"',
                 productName: "바이옴 에센스&블루 샷",
                 price: {
@@ -154,7 +174,7 @@ var drjart = {
                 labels: ["best", "gift", "sale"]
             },
             {
-                image: "../images/1589852789984.png",
+                image: "../images/1589852789984.webp",
                 tags: "수분선앰플",
                 productName: "솔라바이옴™앰플 특별 기획세트",
                 price: {
@@ -169,23 +189,24 @@ var drjart = {
             return `
                 <li>
                         <div class="item">
-                            <a href="${item.a}"></a>
-                            <div class="thumb">
-                                <img src=${item.image} alt="">
-                                <div class="labels">
-                                ${item.labels.map(function (label) {
-                return `<div class="${label}">${label}</div>`
-            }).join("")}
+                            <a href="${item.a}">
+                                <div class="thumb">
+                                    <img src=${item.image} alt="">
+                                    <div class="labels">
+                                    ${item.labels.map(function (label) {
+                    return `<div class="${label}">${label}</div>`
+                }).join("")}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="description">
-                                <div class="tags">${item.tags}</div>
-                                <h3>${item.productName}</h3>
-                                <div class="price ${item.price.origin ? "sale" : ""}">
-                                    <div class="origin-price">${item.price.origin}</div>
-                                    <strong>${item.price.currentPrice}</strong>
+                                <div class="description">
+                                    <div class="tags">${item.tags}</div>
+                                    <h3>${item.productName}</h3>
+                                    <div class="price ${item.price.origin ? "sale" : ""}">
+                                        <div class="origin-price">${item.price.origin}</div>
+                                        <strong>${item.price.currentPrice}</strong>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                             <div class="buttons">
                                 <a href="#!" class="buy">
                                     바로구매
@@ -197,11 +218,11 @@ var drjart = {
                                 <a href="#!" class="cart">
                                     <img src="../images/btn_cart.webp" alt="">
                                 </a>
-                                <div href="#!" class="favorite">
+                                <a href="#!" class="favorite">
                                     <img src="../images/btn_wish.webp" alt="">
-                                </div>
+                                </a>
                             </div>
-                        </divitem>
+                        </div>
                 </li>
             `
         })
@@ -212,37 +233,37 @@ var drjart = {
     renderProductBenefit: function () {
         const products = [
             {
-                image: "../images/1587021615232.png",
-                tags: "#탱글수분크림",
-                productName: "솔라바이옴™앰플 특별 기획세트",
+                image: "../images/1590393773811.webp",
+                tags: "#시카리페어세럼 ",
+                productName: "2세대 시카페어 세럼",
                 price: {
-                    currentPrice: '38,000원',
-                    origin: '',
+                    currentPrice: '37,050원',
+                    origin: '39,000원',
                 },
                 labels: ["new","best","gift"]
             },
             {
-                image: "../images/1587021615232.png",
-                tags: "#탱글수분크림",
-                productName: "솔라바이옴™앰플 특별 기획세트",
+                image: "../images/1587020955660.webp",
+                tags: "#수분체질개선_에센스",
+                productName: "바이탈 하이드라 솔루션 바이옴 에센스 150mL",
                 price: {
-                    currentPrice: '39,000원',
+                    currentPrice: '49,000원',
                     origin: '',
                 },
                 labels: ["best"]
             },
             {
-                image: "../images/1587021615232.png",
-                tags: "#탱글수분크림",
-                productName: "솔라바이옴™앰플 특별 기획세트",
+                image: "../images/1587022010571.webp",
+                tags: "# 함께해서 15% SALE",
+                productName: "티트리먼트™ 대용량 2종세트",
                 price: {
-                    currentPrice: '29,000원',
-                    origin: '',
+                    currentPrice: '56,950원',
+                    origin: '67,000',
                 },
                 labels: ["best"]
             },
             {
-                image: "../images/1587021615232.png",
+                image: "../images/1563762254864.webp",
                 tags: "#탱글수분크림",
                 productName: "솔라바이옴™앰플 특별 기획세트",
                 price: {
@@ -252,12 +273,12 @@ var drjart = {
                 labels: ["best","gift","sale"]
             },
             {
-                image: "../images/1587021615232.png",
-                tags: "#탱글수분크림",
-                productName: "솔라바이옴™앰플 특별 기획세트",
+                image: "../images/1591944934738.webp",
+                tags: "#민감피부선크림",
+                productName: "솔라바이옴™징크림 특별 기획세트",
                 price: {
-                    currentPrice: '22,000원',
-                    origin: '',
+                    currentPrice: '26,100원',
+                    origin: '29,000원',
                 },
                 labels: ["best"]
             },

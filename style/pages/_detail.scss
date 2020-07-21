@@ -1,33 +1,54 @@
-.product-detail-visual {
+.detail-visual {
   padding-bottom: 100px;
   .container {
     display: flex;
   }
-  .slider-for {
+  .visual-container {
+    position: relative;
     width: 750px;
-    flex: 70%;
-    .item {
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
-      &.img1 {
-        background-image: url("../images/1560475105869.webp");
+    .visual-for {
+      .item {
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        &.img1 {
+          background-image: url("../images/1560475105869.webp");
+        }
+        &.img2 {
+          background-image: url("../images/1560475117671.webp");
+        }
+        &.img3 {
+          background-image: url("../images/1557899103765.webp");
+        }
+        &.img4 {
+          background-image: url("../images/1557899107862.webp");
+        }
       }
-      &.img2 {
-        background-image: url("../images/1560475117671.webp");
-      }
-      &.img3 {
-        background-image: url("../images/1557899103765.webp");
-      }
-      &.img4 {
-        background-image: url("../images/1557899107862.webp");
+    }
+    .visual-nav {
+      position: absolute;
+      top: 25%;
+      left: 0;
+      .slick-track {
+        display: flex;
+        flex-direction: column;
+        .slick-slide {
+          padding: 7px;
+          > div {
+            width: 64px;
+            height: 64px;
+            img {
+              width: 64px;
+              height: 64px;
+            }
+          }
+        }
       }
     }
   }
   .description {
     position: relative;
-    flex: 30%;
-    width: 380px;
+    width: 320px;
     margin-left: 50px;
     .sns-links {
       position: absolute;
@@ -135,7 +156,7 @@
     }
   }
 }
-.product-detail-reviewstar {
+.reviewstar {
   padding-bottom: 100px;
   .description {
     display: flex;
@@ -173,7 +194,7 @@
     }
   }
 }
-.product-detail-information {
+.information {
   .info-menu {
     display: flex;
     justify-content: center;
@@ -326,7 +347,7 @@
     transition: .5s;
   }
 }
-.product-detail-review {
+.review {
   padding-bottom: 100px;
   .guide {
     border: 1px solid #dadada;
@@ -392,6 +413,9 @@
             align-items: center;
             padding: 4px 10px;
             cursor: pointer;
+            &:hover {
+              background-color: #555;
+            }
             .text {
               margin-left: 10px;
             }

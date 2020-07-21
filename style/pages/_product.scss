@@ -47,6 +47,21 @@ main {
           line-height: 24px;
           margin-top: 16px;
         }
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          100% {
+            opacity: 1;
+            transform: none;
+          }
+        }
+        .fadeInUp {
+          animation-name: fadeInUp;
+          animation-duration: 0.6s;
+          animation-fill-mode: both;
+        }
       }
       &.img1 {
         background-image: url("../images/1592547515694.webp");
@@ -179,7 +194,6 @@ main {
           font-weight: 500;
         }
       }
-
     }
   }
 
@@ -195,12 +209,12 @@ main {
       &.img2 {
         background-image: url("../images/1590975568275.webp");
       }
-      .product-desc {
+      .description {
         height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        h2 {
+        h1 {
           font-size: 40px;
           line-height: 1.5;
         }
@@ -208,6 +222,21 @@ main {
           font-size: 14px;
           line-height: 1.5;
           margin-top: 16px;
+        }
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          100% {
+            opacity: 1;
+            transform: none;
+          }
+        }
+        .fadeInUp {
+          animation-name: fadeInUp;
+          animation-duration: 0.6s;
+          animation-fill-mode: both;
         }
       }
     }
