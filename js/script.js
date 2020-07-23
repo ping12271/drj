@@ -23,11 +23,7 @@ var drjart = {
             speed: 1000,
             fade: true,
             arrows: false,
-        });
-        $('.story-slide').slick({
-            prevArrow: $('.slick-prev'),
-            nextArrow: $('.slick-next'),
-        });
+        })
         var slickCustomEvent = {
             init : function(){
                 slickCustomEvent.initialize()
@@ -51,6 +47,11 @@ var drjart = {
             }
         }
         slickCustomEvent.init();
+
+        $('.story-slide').slick({
+            prevArrow: $('.slick-prev'),
+            nextArrow: $('.slick-next'),
+        });
     },
 
     sliderNav: function () {
