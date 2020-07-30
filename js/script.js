@@ -9,10 +9,11 @@ var drjart = {
         drjart.fullPage();
         drjart.toggleClass();
         drjart.slideToggle();
-        drjart.reviewSlide();
+        drjart.tabMenu();
         drjart.getScroll();
         drjart.renderProductBest();
         drjart.renderProductBenefit();
+
     },
 
     slider: function () {
@@ -20,7 +21,7 @@ var drjart = {
             autoplay: true,
             dots: true,
             infinite: true,
-            speed: 1000,
+            speed: 400,
             fade: true,
             arrows: false,
         })
@@ -101,6 +102,9 @@ var drjart = {
         $('.chat').on('click', function () {
             $('.drop-icon, .chat-icon').toggleClass('is-active');
         });
+        $('.text-review .more,.description .close').on('click', function () {
+            $(this).closest('.item').toggleClass('open-review');
+        });
     },
 
     slideToggle: function () {
@@ -108,17 +112,26 @@ var drjart = {
             $('.star-score .dropdown').slideToggle();
         });
 
-        $('.type-select .name').on('click', function () {
-            $(this).next('.dropdown').slideToggle(500);
-            $(this).next().siblings('.dropdown').slideUp();
+        // 다른영역을 클릭했을 때에 드롭다운을 꺼지게 하고 싶은데 안 되네요ㅠㅜ
+        $('.menu-item').on('click', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            $(this).find('.dropdown').slideDown();
+            $(this).siblings().find('.dropdown').slideUp();
+        });
+
+        $('.type-select').on('click', function () {
+            $(this).addClass('active').siblings().removeClass('active');
         });
     },
 
-    reviewSlide: function () {
-        $('.text-review .more,.description .close').on('click', function () {
-            $(this).closest('.item').toggleClass('open-review');
-        });
+    tabMenu: function () {
+        $('.contents nav a').on('click', function () {
+            const index = $(this).index();
+            $(this).addClass('is-active').siblings().removeClass('is-active');
+            $('.contents .content').eq(index).show().siblings().hide();
+        }).eq(0).trigger('click');
     },
+
 
     getScroll: function () {
         $(window).on("scroll", function () {
@@ -134,7 +147,7 @@ var drjart = {
     renderProductBest: function () {
         const products = [
             {
-                a: "http://localhost:63342/drj/pages/detail.html?_ijt=h10rkv6egsps2qtjij1gsi40ib",
+                a: "detail.html",
                 image: "../images/1560475092450.webp",
                 tags: "#탱글수분크림",
                 productName: "바이탈 하이드라 솔루션 바이옴 워터 크림",

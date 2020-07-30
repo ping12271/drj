@@ -41,26 +41,18 @@ main {
         h1 {
           font-size: 40px;
           line-height: 54px;
+          opacity: 0;
         }
         p {
           font-size: 14px;
           line-height: 24px;
           margin-top: 16px;
+          opacity: 0;
+          animation-delay :0.4s
         }
-        @keyframes fadeInUp {
-          0% {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          100% {
-            opacity: 1;
-            transform: none;
-          }
-        }
-        .fadeInUp {
-          animation-name: fadeInUp;
-          animation-duration: 0.6s;
-          animation-fill-mode: both;
+        .slide-btn {
+          opacity: 0;
+          animation-delay :0.6s
         }
       }
       &.img1 {
@@ -217,11 +209,18 @@ main {
         h1 {
           font-size: 40px;
           line-height: 1.5;
+          opacity: 0;
         }
         p {
           font-size: 14px;
           line-height: 1.5;
           margin-top: 16px;
+          opacity: 0;
+          animation-delay :0.4s
+        }
+        .slide-btn {
+          opacity: 0;
+          animation-delay :0.6s
         }
         @keyframes fadeInUp {
           0% {

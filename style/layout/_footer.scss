@@ -36,39 +36,70 @@
       .menu-item {
         position: relative;
         padding: 10px;
+        &.site {
+          width: 160px;
+        }
+        &.family {
+          width: 150px;
+        }
+        &.language {
+          width: 110px;
+        }
         .name {
           display: flex;
+          align-items: center;
+          height: 70px;
           font-size: 12px;
           color: #222;
           cursor: pointer;
         }
         i {
           color: #555;
+          margin-left: 10px;
           &.fa-chevron-down {
             display: none;
           }
         }
+
         .dropdown {
           position: absolute;
-          bottom: 0;
+          z-index: 10;
+          bottom: 60px;
           right: 0;
-          width: 623px;
           background-color: white;
-          ul {
-            display: flex;
-            flex-wrap: wrap;
-            border: 1px solid #555555;
-            li {
-              flex: 25%;
-              max-width: 25%;
-              padding: 25px;
-              border-right: 1px solid rgba(238, 234, 234, 0.81);
-              margin-bottom: 20px;
+          display: none;
+          &.site {
+            width: 623px;
+            ul {
+              display: flex;
+              flex-wrap: wrap;
+              border: 1px solid #555;
+              li {
+                flex: 25%;
+                max-width: 25%;
+                padding: 25px;
+                border-right: 1px solid rgba(238, 234, 234, 0.81);
+                margin: 20px 0;
+              }
             }
+          }
+          &.family,
+          &.language {
+            border: 1px solid #555;
+            a {
+              padding: 10px;
+            }
+          }
+          &.family {
+            width: 150px;
+          }
+          &.language {
+            width: 110px;
           }
           h5 {
             color: #222;
             font-size: 14px;
+            margin-top: -20px;
           }
           a {
             display: flex;
@@ -79,6 +110,14 @@
               text-decoration: underline;
               color: #000;
             }
+          }
+        }
+        &.active {
+          .fa-chevron-down {
+            display: flex;
+          }
+          .fa-chevron-up {
+            display: none;
           }
         }
       }
