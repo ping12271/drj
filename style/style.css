@@ -789,17 +789,18 @@ body {
   display: none;
 }
 #footer .footer-menu nav .menu-item .dropdown {
+  background-color: #fff;
   position: absolute;
-  z-index: 10;
+  z-index: 100;
   bottom: 60px;
   right: 0;
-  background-color: white;
   display: none;
 }
 #footer .footer-menu nav .menu-item .dropdown.site {
   width: 623px;
 }
 #footer .footer-menu nav .menu-item .dropdown.site ul {
+  background-color: #fff;
   display: flex;
   flex-wrap: wrap;
   border: 1px solid #555;
@@ -1235,6 +1236,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 #fullpage .event ul {
   display: flex;
@@ -1301,10 +1303,6 @@ body {
   margin-top: 8px;
   line-height: 1.2;
 }
-#fullpage #footer {
-  padding-left: 0;
-  margin-top: 100px;
-}
 
 main {
   margin-left: 89px;
@@ -1358,11 +1356,11 @@ main {
   line-height: 24px;
   margin-top: 16px;
   opacity: 0;
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
 .visual .item .description .slide-btn {
   opacity: 0;
-  animation-delay: 0.6s;
+  animation-delay: 0.2s;
 }
 .visual .item.img1 {
   background-image: url("../images/1592547515694.webp");
@@ -1519,11 +1517,11 @@ main {
   line-height: 1.5;
   margin-top: 16px;
   opacity: 0;
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
 .product-slide .item .description .slide-btn {
   opacity: 0;
-  animation-delay: 0.6s;
+  animation-delay: 0.2s;
 }
 @keyframes fadeInUp {
   0% {
@@ -1537,7 +1535,7 @@ main {
 }
 .product-slide .item .description .fadeInUp {
   animation-name: fadeInUp;
-  animation-duration: 0.6s;
+  animation-duration: 0.5s;
   animation-fill-mode: both;
 }
 
@@ -1811,7 +1809,8 @@ main {
 }
 .detail-visual .visual-container {
   position: relative;
-  width: 750px;
+  width: 800px;
+  margin-left: -60px;
 }
 .detail-visual .visual-container .visual-for .item {
   height: 100vh;
@@ -2487,7 +2486,7 @@ main {
 .contents .guide .board {
   width: 100%;
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.5;
   color: #555;
 }
 .contents .guide .board.row {
@@ -2498,7 +2497,7 @@ main {
 }
 .contents .guide .board td {
   padding: 20px 0;
-  min-width: 235px;
+  max-width: 160px;
 }
 .contents .guide .board td em {
   color: #999;

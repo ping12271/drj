@@ -21,7 +21,7 @@ var drjart = {
             autoplay: true,
             dots: true,
             infinite: true,
-            speed: 400,
+            speed: 500,
             fade: true,
             arrows: false,
         })
@@ -112,11 +112,10 @@ var drjart = {
             $('.star-score .dropdown').slideToggle();
         });
 
-        // 다른영역을 클릭했을 때에 드롭다운을 꺼지게 하고 싶은데 안 되네요ㅠㅜ
-        $('.menu-item').on('click', function () {
-            $(this).addClass('active').siblings().removeClass('active');
-            $(this).find('.dropdown').slideDown();
-            $(this).siblings().find('.dropdown').slideUp();
+        $('.menu-item .name').on('click', function () {
+            $(this).addClass('active').find().removeClass('active');
+            $(this).next('.dropdown').slideToggle();
+            $(this).closest('.menu-item').siblings().find('.dropdown').slideUp();
         });
 
         $('.type-select').on('click', function () {

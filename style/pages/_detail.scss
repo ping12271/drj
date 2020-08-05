@@ -5,7 +5,8 @@
   }
   .visual-container {
     position: relative;
-    width: 750px;
+    width: 800px;
+    margin-left: -60px;
     .visual-for {
       .item {
         height: 100vh;
@@ -700,7 +701,7 @@
     .board {
       width: 100%;
       font-size: 14px;
-      line-height: 1.4;
+      line-height: 1.5;
       color: #555;
       &.row {
         flex: 50%;
@@ -710,7 +711,7 @@
       }
       td {
         padding: 20px 0;
-        min-width: 235px;
+        max-width: 160px;
         em {
           color: #999;
           font-size: 13px;

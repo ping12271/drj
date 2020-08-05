@@ -48,11 +48,11 @@ main {
           line-height: 24px;
           margin-top: 16px;
           opacity: 0;
-          animation-delay :0.4s
+          animation-delay :0.2s;
         }
         .slide-btn {
           opacity: 0;
-          animation-delay :0.6s
+          animation-delay :0.2s
         }
       }
       &.img1 {
@@ -216,11 +216,11 @@ main {
           line-height: 1.5;
           margin-top: 16px;
           opacity: 0;
-          animation-delay :0.4s
+          animation-delay :0.2s
         }
         .slide-btn {
           opacity: 0;
-          animation-delay :0.6s
+          animation-delay :0.2s
         }
         @keyframes fadeInUp {
           0% {
@@ -234,7 +234,7 @@ main {
         }
         .fadeInUp {
           animation-name: fadeInUp;
-          animation-duration: 0.6s;
+          animation-duration: 0.5s;
           animation-fill-mode: both;
         }
       }
