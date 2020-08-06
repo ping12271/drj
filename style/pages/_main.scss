@@ -3,6 +3,13 @@
   margin-left: 89px;
 
   .main-slide {
+    .slick-active {
+      .item {
+        &::before {
+          transform: none;
+        }
+      }
+    }
     .item {
       position: relative;
       &::before {
@@ -15,10 +22,7 @@
         background-size: cover;
         background-position: center;
         transform: scale(1.1);
-        .slick-active & {
-          transition: .6s;
-          transform: none;
-        }
+        transition: 2s;
       }
       &.img1 {
         &::before {
@@ -55,6 +59,7 @@
           background-image: url("../images/1592266183185.webp");
         }
       }
+    }
       .description {
         height: 100vh;
         display: flex;
@@ -114,7 +119,7 @@
         margin-top: 16px;
       }
     }
-  }
+
   .movie {
     .main {
       display: flex;

@@ -803,7 +803,6 @@ body {
 }
 
 #footer {
-  padding-left: 0;
   padding-top: 200px;
 }
 #footer .footer-menu {
@@ -1154,6 +1153,9 @@ body {
   position: relative;
   margin-left: 89px;
 }
+#fullpage .main-slide .slick-active .item::before {
+  transform: none;
+}
 #fullpage .main-slide .item {
   position: relative;
 }
@@ -1167,10 +1169,7 @@ body {
   background-size: cover;
   background-position: center;
   transform: scale(1.1);
-}
-.slick-active #fullpage .main-slide .item::before {
-  transition: 0.6s;
-  transform: none;
+  transition: 2s;
 }
 #fullpage .main-slide .item.img1::before {
   background-image: url("../images/1594880874463.webp");
@@ -1193,39 +1192,40 @@ body {
 #fullpage .main-slide .item.img7::before {
   background-image: url("../images/1592266183185.webp");
 }
-#fullpage .main-slide .item .description {
+#fullpage .main-slide .description {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
 }
-#fullpage .main-slide .item .description h1 {
+#fullpage .main-slide .description h1 {
   font-size: 48px;
   line-height: 1.5;
   font-weight: 600;
   opacity: 0;
 }
-#fullpage .main-slide .item .description p {
+#fullpage .main-slide .description p {
   font-size: 16px;
   line-height: 1.5;
   margin-top: 16px;
   opacity: 0;
   animation-delay: 0.4s;
 }
-#fullpage .main-slide .item .description .slide-btn {
+#fullpage .main-slide .description .slide-btn {
   font-size: 16px;
   opacity: 0;
   animation-delay: 0.6s;
 }
-#fullpage .project .item {
+
+.project .item {
   background-position: center;
   background-size: cover;
 }
-#fullpage .project .item.img1 {
+.project .item.img1 {
   background-image: url("../images/1584351429576.png");
 }
-#fullpage .project .description {
+.project .description {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1233,47 +1233,47 @@ body {
   align-items: center;
   text-align: center;
 }
-#fullpage .project .description h2 {
+.project .description h2 {
   font-size: 22px;
   line-height: 1.2;
   margin-top: 16px;
   font-weight: 600;
 }
-#fullpage .project .description h1 {
+.project .description h1 {
   font-size: 60px;
   line-height: 1.5;
   margin: 20px 0;
 }
-#fullpage .project .description p {
+.project .description p {
   font-size: 14px;
   line-height: 1.5;
   margin-top: 16px;
 }
-#fullpage .movie .main {
+.project .movie .main {
   display: flex;
   justify-content: center;
   align-items: baseline;
 }
-#fullpage .movie .main .description {
+.project .movie .main .description {
   text-align: center;
   transform: translateY(14%);
   margin-right: 80px;
 }
-#fullpage .movie .main .description h2 {
+.project .movie .main .description h2 {
   font-size: 15px;
   font-weight: 600;
 }
-#fullpage .movie .main .description h1 {
+.project .movie .main .description h1 {
   font-size: 40px;
   font-weight: 600;
   line-height: 1.2;
   margin: 30px 0;
 }
-#fullpage .movie .main .description .sub {
+.project .movie .main .description .sub {
   font-size: 14px;
   line-height: 1.5;
 }
-#fullpage .movie .main .description .more-btn {
+.project .movie .main .description .more-btn {
   position: relative;
   width: 140px;
   margin-top: 36px;
@@ -1281,14 +1281,14 @@ body {
   background-color: #000;
   overflow: hidden;
 }
-#fullpage .movie .main .description .more-btn:hover .screen {
+.project .movie .main .description .more-btn:hover .screen {
   transform: none;
 }
-#fullpage .movie .main .description .more-btn:hover a {
+.project .movie .main .description .more-btn:hover a {
   color: #000;
   z-index: 10;
 }
-#fullpage .movie .main .description .more-btn a {
+.project .movie .main .description .more-btn a {
   position: relative;
   z-index: 10;
   display: flex;
@@ -1300,7 +1300,7 @@ body {
   color: #fff;
   transition: all 0.5s;
 }
-#fullpage .movie .main .description .more-btn .screen {
+.project .movie .main .description .more-btn .screen {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1311,35 +1311,35 @@ body {
   transform: translateX(-100%);
   transition: 0.4s;
 }
-#fullpage .movie .main .cover {
+.project .movie .main .cover {
   position: relative;
   width: 782px;
 }
-#fullpage .movie .main .cover .play {
+.project .movie .main .cover .play {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
-#fullpage .event ul {
+.project .event ul {
   display: flex;
   margin: 0 -10px;
 }
-#fullpage .event ul li {
+.project .event ul li {
   flex: 1 1 25%;
   padding: 10px;
 }
-#fullpage .event ul .item .thumb {
+.project .event ul .item .thumb {
   position: relative;
   width: 267px;
   height: 364px;
   overflow: hidden;
 }
-#fullpage .event ul .item .thumb img {
+.project .event ul .item .thumb img {
   transition: 0.6s;
 }
-#fullpage .event ul .item .thumb .screen {
+.project .event ul .item .thumb .screen {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1348,7 +1348,7 @@ body {
   background-color: rgba(0, 0, 0, 0.68);
   opacity: 0;
 }
-#fullpage .event ul .item .thumb .screen::before, #fullpage .event ul .item .thumb .screen::after {
+.project .event ul .item .thumb .screen::before, .project .event ul .item .thumb .screen::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -1358,30 +1358,30 @@ body {
   opacity: 0;
   transition: 0.6s;
 }
-#fullpage .event ul .item .thumb:hover img {
+.project .event ul .item .thumb:hover img {
   transform: scale(1.2);
 }
-#fullpage .event ul .item .thumb:hover .screen {
+.project .event ul .item .thumb:hover .screen {
   opacity: 1;
 }
-#fullpage .event ul .item .thumb:hover .screen::before {
+.project .event ul .item .thumb:hover .screen::before {
   width: 80px;
   height: 1px;
   transform: translateX(-50%);
   opacity: 1;
 }
-#fullpage .event ul .item .thumb:hover .screen::after {
+.project .event ul .item .thumb:hover .screen::after {
   width: 1px;
   height: 80px;
   transform: translateY(-50%);
   opacity: 1;
 }
-#fullpage .event ul .item .description h4 {
+.project .event ul .item .description h4 {
   color: #999;
   font-size: 13px;
   margin-top: 25px;
 }
-#fullpage .event ul .item .description h3 {
+.project .event ul .item .description h3 {
   color: #222;
   font-size: 16px;
   margin-top: 8px;
@@ -1419,8 +1419,6 @@ main {
   position: relative;
 }
 .visual .item {
-  background-size: cover;
-  background-position: center;
   height: 600px;
 }
 .visual .item .description {
@@ -1447,19 +1445,19 @@ main {
   animation-delay: 0.2s;
 }
 .visual .item.img1 {
-  background-image: url("../images/1592547515694.webp");
+  background: url("../images/1592547515694.webp") 50% 50% no-repeat;
 }
 .visual .item.img2 {
-  background-image: url("../images/1591674179072.webp");
+  background: url("../images/1591674179072.webp") 50% 50% no-repeat;
 }
 .visual .item.img3 {
-  background-image: url("../images/1591775835067.webp");
+  background: url("../images/1591775835067.webp") 50% 50% no-repeat;
 }
 .visual .item.img4 {
-  background-image: url("../images/1591931728077.webp");
+  background: url("../images/1591931728077.webp") 50% 50% no-repeat;
 }
 .visual .item.img5 {
-  background-image: url("../images/1592267991402.webp");
+  background: url("../images/1592267991402.webp") 50% 50% no-repeat;
 }
 
 .product-items {
@@ -1589,17 +1587,16 @@ main {
   position: relative;
 }
 .product-slide .item {
-  background: #fff 100%/cover no-repeat;
-  height: 400px;
+  height: 341px;
 }
 .product-slide .item.img1 {
-  background-image: url("../images/1590975601063.webp");
+  background: url("../images/1590975601063.webp") 50% 50% no-repeat;
 }
 .product-slide .item.img2 {
-  background-image: url("../images/1590975568275.webp");
+  background: url("../images/1590975568275.webp") 50% 50% no-repeat;
 }
 .product-slide .item .description {
-  height: 400px;
+  height: 341px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1818,6 +1815,7 @@ main {
 .product-review ul li .item {
   flex: 25%;
   padding: 15px;
+  cursor: pointer;
 }
 @media only screen and (max-width: 768px) {
   .product-review ul li .item {
@@ -1858,32 +1856,32 @@ main {
   margin: 0 60px;
   background-color: #f5f5f5;
 }
-.product-sns .container h3 {
+.product-sns h3 {
   font-size: 26px;
   text-align: center;
   margin-bottom: 30px;
   font-weight: 500;
 }
-.product-sns .container ul {
+.product-sns ul {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-.product-sns .container ul li {
-  flex: 20%;
+.product-sns ul li {
+  flex: 1 1 20%;
   min-width: 20%;
 }
-.product-sns .container ul .item {
+.product-sns ul .item {
   padding: 15px;
 }
-.product-sns .container ul .item .thumb {
+.product-sns ul .item .thumb {
   width: 220px;
   height: 220px;
   overflow: hidden;
   position: relative;
   object-fit: cover;
 }
-.product-sns .container ul .item .thumb .screen {
+.product-sns ul .item .thumb .screen {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1898,11 +1896,11 @@ main {
   transition: 0.4s;
   cursor: pointer;
 }
-.product-sns .container ul .item .thumb .screen i {
+.product-sns ul .item .thumb .screen i {
   color: #fff;
   margin-right: 10px;
 }
-.product-sns .container ul .item .thumb .screen:hover {
+.product-sns ul .item .thumb .screen:hover {
   opacity: 1;
 }
 
