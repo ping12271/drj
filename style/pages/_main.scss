@@ -1,51 +1,59 @@
 #fullpage {
   position: relative;
   margin-left: 89px;
-  .main-header {
-    padding-top: 60px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 100;
-    ul.main-nav {
-      display: flex;
-      li {
-        a {
-          font-size: 15px;
-          padding: 0 12px;
-          color: #555;
-          &:hover {
-            color: #222;
-          }
-        }
-      }
-    }
-  }
 
   .main-slide {
     .item {
-      background-position: center;
-      background-size: cover;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-size: cover;
+        background-position: center;
+        transform: scale(1.1);
+        .slick-active & {
+          transition: .6s;
+          transform: none;
+        }
+      }
       &.img1 {
-        background-image: url("../images/1592871071033.webp");
+        &::before {
+          background-image: url("../images/1594880874463.webp");
+        }
       }
       &.img2 {
-        background-image: url("../images/1594880874463.webp");
+        &::before {
+          background-image: url("../images/1596414392901.webp");
+        }
       }
       &.img3 {
-        background-image: url("../images/1591931914157.webp");
+        &::before {
+          background-image: url("../images/1591931914157.webp");
+        }
       }
       &.img4 {
-        background-image: url("../images/1592437221751.webp");
+        &::before {
+          background-image: url("../images/1592437221751.webp");
+        }
       }
       &.img5 {
-        background-image: url("../images/1591780771253.webp");
+        &::before {
+          background-image: url("../images/1591780771253.webp");
+        }
       }
       &.img6 {
-        background-image: url("../images/1592301248099.webp");
+        &::before {
+          background-image: url("../images/1592301248099.webp");
+        }
       }
       &.img7 {
-        background-image: url("../images/1592266183185.webp");
+        &::before {
+          background-image: url("../images/1592266183185.webp");
+        }
       }
       .description {
         height: 100vh;

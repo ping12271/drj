@@ -6,7 +6,7 @@
     width: 89px;
     z-index: 100;
     background-color: #fff;
-    border-right: 1px solid #d5d3d3;
+    border-right: 1px solid #dcdcdc;
     .open-side-menu & {
       border: none;
     }
@@ -20,57 +20,108 @@
       justify-content: space-between;
       align-items: center;
       .plus {
+        position: relative;
         margin-top: 30px;
         display: flex;
         width: 28px;
         height: 28px;
-        position: relative;
-        &:before, &:after {
-          content: '';
+        span {
+          display: block;
           position: absolute;
-          background-color: black;
-        }
-        &:before {
           left: 50%;
-          width: 30%;
-          margin-left: -15%;
-          height: 100%;
-        }
-
-        &:after {
           top: 50%;
-          height: 30%;
-          margin-top: -15%;
-          width: 100%;
+          background-color: #000;
+          &:nth-child(1) {
+            width: 26px;
+            height: 6px;
+            left: 4px;
+          }
+          &:nth-child(2) {
+            width: 6px;
+            height: 26px;
+            top: 5px;
+          }
+        }
+        .open-side-menu & {
+          display: none;
         }
       }
 
       .all-menu {
-        font-size: 30px;
-
-        .fa-bars {
+        position: relative;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        span {
+          position: absolute;
+          display: block;
+          width: 24px;
+          height: 1px;
+          background-color: #000;
+          &:nth-child(1) {
+            top: 15px;
+          }
+          &:nth-child(2) {
+            top: 23px;
+          }
+          &:nth-child(3) {
+            top: 31px;
+          }
           .open-side-menu & {
             display: none;
           }
         }
-
-        .fa-times {
-          display: none;
-
-          .open-side-menu & {
-            display: block;
-          }
+      }
+      .close {
+        position: relative;
+        display: none;
+        cursor: pointer;
+        &::before,
+        &::after {
+          position: absolute;
+          content: '';
+          background-color: #000;
+        }
+        &::before {
+          width: 24px;
+          height: 1px;
+          transform: rotate(-45deg);
+          right: -12px;
+        }
+        &::after {
+          width: 24px;
+          height: 1px;
+          transform: rotate(45deg);
+          left: -12px;
+        }
+        .open-side-menu & {
+          display: block;
         }
       }
 
       .icons {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 30px;
-        text-align: center;
         a {
           width: 29px;
           height: 29px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 30px 5px;
+        }
+        .cart {
+          background: url("../images/ico_common.webp") -89px 0 no-repeat;
+        }
+        .search {
+
+          background: url("../images/ico_common.webp") -153px 0 no-repeat;
+        }
+        .login {
+          background: url("../images/ico_login_new.webp") 0 0 no-repeat;
+          background-size: 100%;
+          margin-right: 5px;
         }
       }
     }
@@ -123,7 +174,6 @@
           }
         }
       }
-
       .side-btn {
         width: 140px;
         height: 30px;
@@ -135,7 +185,6 @@
         font-size: 13px;
         margin: 30px 0;
       }
-
       .language {
         a {
           font-size: 12px;
@@ -150,7 +199,7 @@
             padding-right: 10px;
             margin-right: 10px;
 
-            &:after {
+            &::after {
               content: '';
               width: 1px;
               height: 10px;
@@ -177,7 +226,8 @@
       }
     }
   }
-  .main-header {
+  .top-header {
+    position: relative;
     margin-left: 89px;
     padding-top: 60px;
     nav {
@@ -263,6 +313,25 @@
               display: block;
             }
           }
+        }
+      }
+    }
+  }
+  .main-header {
+    position: fixed;
+    right: 0;
+    z-index: 1000;
+    nav {
+      height: 89px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      a {
+        color: #555;
+        padding: 0 10px;
+        font-size: 15px;
+        &:hover {
+          color: #222;
         }
       }
     }

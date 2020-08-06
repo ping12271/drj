@@ -87,8 +87,17 @@ main {
       flex-wrap: wrap;
       margin: 0 -10px;
       li {
-        width: 20%;
+        flex: 1 1 20%;
+        max-width: 20%;
         padding: 10px;
+        @include screen-md {
+          flex: 1 1 25%;
+          max-width: 25%;
+        }
+        @include screen-sm {
+          flex: 1 1 33.333%;
+          max-width: 33.333%;
+        }
       }
     }
     .item {
@@ -406,7 +415,7 @@ main {
     }
   }
 
-// section 베스트 포토리뷰
+// section 베스트 포토 리뷰
   .product-review {
     padding: 100px 0;
     h3 {
@@ -422,11 +431,17 @@ main {
     }
     ul {
       display: flex;
-      margin: 0 -15px;
+      justify-content: center;
+      flex-wrap: wrap;
       li {
-        flex: 20%;
-        padding: 15px;
+        display: flex;
+        justify-content: center;
         .item {
+          flex: 25%;
+          padding: 15px;
+          @include screen-sm {
+            flex: 33.333%;
+          }
           p.review-text {
             font-size: 12px;
             color: #000;
@@ -476,20 +491,18 @@ main {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        margin: 0 -10px;
         li {
-          flex: 1 1 20%;
-          max-width: 20%;
-          padding: 10px;
+          flex: 20%;
+          min-width: 20%;
         }
         .item {
-          width: 220px;
-          height: 220px;
-          overflow: hidden;
+          padding: 15px;
           .thumb {
-            position: relative;
             width: 220px;
             height: 220px;
+            overflow: hidden;
+            position: relative;
+            object-fit: cover;
             .screen {
               position: absolute;
               top: 0;

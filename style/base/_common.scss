@@ -5,6 +5,11 @@ body {
     word-break: keep-all;
 }
 
+#wrap {
+    min-width: 1280px;
+    overflow: hidden;
+}
+
 #main, #footer {
     min-width: 1280px;
     padding-left: 90px;

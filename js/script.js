@@ -77,7 +77,7 @@ var drjart = {
     },
 
     handleSideMenu: function () {
-        $('.all-menu').on('click', function () {
+        $('.all-menu, .close').on('click', function () {
             $('html').toggleClass('open-side-menu');
         })
         $('.side-header .screen').on('click', function () {
@@ -113,7 +113,8 @@ var drjart = {
         });
 
         $('.menu-item .name').on('click', function () {
-            $(this).addClass('active').find().removeClass('active');
+            $(this).find('i').toggleClass('active');
+            $(this).closest('.menu-item').siblings().find('i').removeClass('active');
             $(this).next('.dropdown').slideToggle();
             $(this).closest('.menu-item').siblings().find('.dropdown').slideUp();
         });

@@ -1,4 +1,6 @@
 #footer {
+  padding-left: 0;
+  padding-top: 200px;
   .footer-menu {
     background-color: #fff;
     border-top: 1px solid #f5f4f4;
@@ -58,6 +60,14 @@
           margin-left: 10px;
           &.fa-chevron-down {
             display: none;
+          }
+          &.active {
+            &.fa-chevron-down {
+              display: block;
+            }
+            &.fa-chevron-up {
+              display: none;
+            }
           }
         }
 
