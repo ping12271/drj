@@ -30,11 +30,11 @@
       position: absolute;
       top: 25%;
       left: 0;
+
       .slick-track {
         display: flex;
         flex-direction: column;
         .slick-slide {
-          padding: 7px;
           > div {
             width: 64px;
             height: 64px;
@@ -49,7 +49,7 @@
   }
   .description {
     position: relative;
-    width: 320px;
+    width: 400px;
     margin-left: 50px;
     .sns-links {
       position: absolute;
@@ -76,7 +76,7 @@
     }
     .title {
       position: relative;
-      margin-top: 100px;
+      margin-top: 70px;
       .labels {
         display: flex;
         > div {
@@ -95,12 +95,23 @@
         color: #999;
         margin: 20px 0;
       }
-      .price {
-        font-size: 18px;
-        color: #222;
-        font-weight: 600;
-        margin-bottom: 19px;
+      >div {
+        display: flex;
+        margin-bottom: 15px;
+        .price {
+          font-size: 18px;
+          color: #222;
+          font-weight: 600;
+        }
+        .price.sale {
+          font-weight: 100;
+          color: #999;
+          font-size: 15px;
+          text-decoration: line-through;
+          margin-right: 10px;
+        }
       }
+
     }
     .option {
       border-top: 1px solid #dcdcdc;
@@ -158,12 +169,11 @@
   }
 }
 
-.review-list {
+.review-thumb {
   padding-bottom: 100px;
   .description {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-bottom: 20px;
     p.title {
       font-size: 18px;
@@ -688,35 +698,37 @@
     }
   }
   .guide {
-    display: none;
+    padding-top: 30px;
     h4 {
-      color: #222;
       font-size: 16px;
-      padding: 55px 0 16px;
+      color: #222;
       border-bottom: 1px solid #222;
+      padding: 55px 0 16px;
     }
-    > div {
-      display: flex;
-    }
-    .board {
+    table {
       width: 100%;
-      font-size: 14px;
-      line-height: 1.5;
-      color: #555;
-      &.row {
-        flex: 50%;
-      }
-      tr.border {
-        border-bottom: 1px solid #eee;
+      margin: 0 auto;
+      border-collapse: collapse;
+      border-spacing: 0;
+      th {
+        width: 186px;
       }
       td {
-        padding: 20px 0;
-        max-width: 160px;
-        em {
-          color: #999;
-          font-size: 13px;
-          line-height: 2;
-        }
+        min-width: 305px;
+        line-height: 30px;
+      }
+      th, td {
+        text-align: left;
+        font-size: 14px;
+        color: #555;
+        padding: 12px 0;
+      }
+      .border {
+        border-top: 1px solid #eee;
+      }
+      em {
+        font-size: 13px;
+        color: #999;
       }
     }
   }

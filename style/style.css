@@ -470,7 +470,7 @@ body {
 }
 
 .container-sm {
-  width: 940px;
+  width: 980px;
   margin: 0 auto;
 }
 
@@ -803,7 +803,7 @@ body {
 }
 
 #footer {
-  padding-top: 200px;
+  padding-top: 100px;
 }
 #footer .footer-menu {
   background-color: #fff;
@@ -1941,9 +1941,6 @@ main {
   display: flex;
   flex-direction: column;
 }
-.detail-visual .visual-container .visual-nav .slick-track .slick-slide {
-  padding: 7px;
-}
 .detail-visual .visual-container .visual-nav .slick-track .slick-slide > div {
   width: 64px;
   height: 64px;
@@ -1954,7 +1951,7 @@ main {
 }
 .detail-visual .description {
   position: relative;
-  width: 320px;
+  width: 400px;
   margin-left: 50px;
 }
 .detail-visual .description .sns-links {
@@ -1982,7 +1979,7 @@ main {
 }
 .detail-visual .description .title {
   position: relative;
-  margin-top: 100px;
+  margin-top: 70px;
 }
 .detail-visual .description .title .labels {
   display: flex;
@@ -2000,11 +1997,21 @@ main {
   color: #999;
   margin: 20px 0;
 }
-.detail-visual .description .title .price {
+.detail-visual .description .title > div {
+  display: flex;
+  margin-bottom: 15px;
+}
+.detail-visual .description .title > div .price {
   font-size: 18px;
   color: #222;
   font-weight: 600;
-  margin-bottom: 19px;
+}
+.detail-visual .description .title > div .price.sale {
+  font-weight: 100;
+  color: #999;
+  font-size: 15px;
+  text-decoration: line-through;
+  margin-right: 10px;
 }
 .detail-visual .description .option {
   border-top: 1px solid #dcdcdc;
@@ -2058,37 +2065,36 @@ main {
   background-color: #fff;
 }
 
-.review-list {
+.review-thumb {
   padding-bottom: 100px;
 }
-.review-list .description {
+.review-thumb .description {
   display: flex;
   justify-content: center;
-  align-items: center;
   margin-bottom: 20px;
 }
-.review-list .description p.title {
+.review-thumb .description p.title {
   font-size: 18px;
   color: #333;
   margin-right: 15px;
 }
-.review-list .description p.title em {
+.review-thumb .description p.title em {
   margin-left: 15px;
 }
-.review-list .description .star i {
+.review-thumb .description .star i {
   color: #333;
   letter-spacing: -2px;
   font-size: 20px;
 }
-.review-list .thumb {
+.review-thumb .thumb {
   display: flex;
   justify-content: center;
 }
-.review-list .thumb img {
+.review-thumb .thumb img {
   padding: 10px;
   cursor: pointer;
 }
-.review-list .thumb img:hover {
+.review-thumb .thumb img:hover {
   filter: grayscale(100%);
   transition: 0.4s;
 }
@@ -2575,37 +2581,39 @@ main {
   font-size: 12px;
 }
 .contents .guide {
-  display: none;
+  padding-top: 30px;
 }
 .contents .guide h4 {
-  color: #222;
   font-size: 16px;
-  padding: 55px 0 16px;
+  color: #222;
   border-bottom: 1px solid #222;
+  padding: 55px 0 16px;
 }
-.contents .guide > div {
-  display: flex;
-}
-.contents .guide .board {
+.contents .guide table {
   width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.contents .guide table th {
+  width: 186px;
+}
+.contents .guide table td {
+  min-width: 305px;
+  line-height: 30px;
+}
+.contents .guide table th, .contents .guide table td {
+  text-align: left;
   font-size: 14px;
-  line-height: 1.5;
   color: #555;
+  padding: 12px 0;
 }
-.contents .guide .board.row {
-  flex: 50%;
+.contents .guide table .border {
+  border-top: 1px solid #eee;
 }
-.contents .guide .board tr.border {
-  border-bottom: 1px solid #eee;
-}
-.contents .guide .board td {
-  padding: 20px 0;
-  max-width: 160px;
-}
-.contents .guide .board td em {
-  color: #999;
+.contents .guide table em {
   font-size: 13px;
-  line-height: 2;
+  color: #999;
 }
 
 .quick-bar {
