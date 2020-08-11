@@ -1217,15 +1217,14 @@ body {
   opacity: 0;
   animation-delay: 0.6s;
 }
-
-.project .item {
+#fullpage .project .item {
   background-position: center;
   background-size: cover;
 }
-.project .item.img1 {
+#fullpage .project .item.img1 {
   background-image: url("../images/1584351429576.png");
 }
-.project .description {
+#fullpage .project .description {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -1233,47 +1232,47 @@ body {
   align-items: center;
   text-align: center;
 }
-.project .description h2 {
+#fullpage .project .description h2 {
   font-size: 22px;
   line-height: 1.2;
   margin-top: 16px;
   font-weight: 600;
 }
-.project .description h1 {
+#fullpage .project .description h1 {
   font-size: 60px;
   line-height: 1.5;
   margin: 20px 0;
 }
-.project .description p {
+#fullpage .project .description p {
   font-size: 14px;
   line-height: 1.5;
   margin-top: 16px;
 }
-.project .movie .main {
+#fullpage .movie .main {
   display: flex;
   justify-content: center;
   align-items: baseline;
 }
-.project .movie .main .description {
+#fullpage .movie .main .description {
   text-align: center;
   transform: translateY(14%);
   margin-right: 80px;
 }
-.project .movie .main .description h2 {
+#fullpage .movie .main .description h2 {
   font-size: 15px;
   font-weight: 600;
 }
-.project .movie .main .description h1 {
+#fullpage .movie .main .description h1 {
   font-size: 40px;
   font-weight: 600;
   line-height: 1.2;
   margin: 30px 0;
 }
-.project .movie .main .description .sub {
+#fullpage .movie .main .description .sub {
   font-size: 14px;
   line-height: 1.5;
 }
-.project .movie .main .description .more-btn {
+#fullpage .movie .main .description .more-btn {
   position: relative;
   width: 140px;
   margin-top: 36px;
@@ -1281,14 +1280,14 @@ body {
   background-color: #000;
   overflow: hidden;
 }
-.project .movie .main .description .more-btn:hover .screen {
+#fullpage .movie .main .description .more-btn:hover .screen {
   transform: none;
 }
-.project .movie .main .description .more-btn:hover a {
+#fullpage .movie .main .description .more-btn:hover a {
   color: #000;
   z-index: 10;
 }
-.project .movie .main .description .more-btn a {
+#fullpage .movie .main .description .more-btn a {
   position: relative;
   z-index: 10;
   display: flex;
@@ -1300,7 +1299,7 @@ body {
   color: #fff;
   transition: all 0.5s;
 }
-.project .movie .main .description .more-btn .screen {
+#fullpage .movie .main .description .more-btn .screen {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1311,35 +1310,35 @@ body {
   transform: translateX(-100%);
   transition: 0.4s;
 }
-.project .movie .main .cover {
+#fullpage .movie .main .cover {
   position: relative;
   width: 782px;
 }
-.project .movie .main .cover .play {
+#fullpage .movie .main .cover .play {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
-.project .event ul {
+#fullpage .event ul {
   display: flex;
   margin: 0 -10px;
 }
-.project .event ul li {
+#fullpage .event ul li {
   flex: 1 1 25%;
   padding: 10px;
 }
-.project .event ul .item .thumb {
+#fullpage .event ul .item .thumb {
   position: relative;
   width: 267px;
   height: 364px;
   overflow: hidden;
 }
-.project .event ul .item .thumb img {
+#fullpage .event ul .item .thumb img {
   transition: 0.6s;
 }
-.project .event ul .item .thumb .screen {
+#fullpage .event ul .item .thumb .screen {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1348,7 +1347,7 @@ body {
   background-color: rgba(0, 0, 0, 0.68);
   opacity: 0;
 }
-.project .event ul .item .thumb .screen::before, .project .event ul .item .thumb .screen::after {
+#fullpage .event ul .item .thumb .screen::before, #fullpage .event ul .item .thumb .screen::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -1358,30 +1357,30 @@ body {
   opacity: 0;
   transition: 0.6s;
 }
-.project .event ul .item .thumb:hover img {
+#fullpage .event ul .item .thumb:hover img {
   transform: scale(1.2);
 }
-.project .event ul .item .thumb:hover .screen {
+#fullpage .event ul .item .thumb:hover .screen {
   opacity: 1;
 }
-.project .event ul .item .thumb:hover .screen::before {
+#fullpage .event ul .item .thumb:hover .screen::before {
   width: 80px;
   height: 1px;
   transform: translateX(-50%);
   opacity: 1;
 }
-.project .event ul .item .thumb:hover .screen::after {
+#fullpage .event ul .item .thumb:hover .screen::after {
   width: 1px;
   height: 80px;
   transform: translateY(-50%);
   opacity: 1;
 }
-.project .event ul .item .description h4 {
+#fullpage .event ul .item .description h4 {
   color: #999;
   font-size: 13px;
   margin-top: 25px;
 }
-.project .event ul .item .description h3 {
+#fullpage .event ul .item .description h3 {
   color: #222;
   font-size: 16px;
   margin-top: 8px;
@@ -1912,7 +1911,8 @@ main {
 }
 .detail-visual .visual-container {
   position: relative;
-  width: 800px;
+  flex: 1;
+  width: 0;
   margin-left: -60px;
 }
 .detail-visual .visual-container .visual-for .item {

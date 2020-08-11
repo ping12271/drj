@@ -1,7 +1,6 @@
 #fullpage {
   position: relative;
   margin-left: 89px;
-
   .main-slide {
     .slick-active {
       .item {
@@ -86,7 +85,6 @@
         }
       }
     }
-  }
   .project {
     .item {
       background-position: center;
@@ -119,7 +117,7 @@
         margin-top: 16px;
       }
     }
-
+  }
   .movie {
     .main {
       display: flex;
@@ -272,4 +270,5 @@
     }
   }
 }
+
 
