@@ -2,11 +2,9 @@
   position: relative;
   margin-left: 89px;
   .main-slide {
-    .slick-active {
-      .item {
-        &::before {
-          transform: none;
-        }
+    .slick-active .item {
+      &::before {
+        transform: none;
       }
     }
     .item {
@@ -18,10 +16,11 @@
         bottom: 0;
         left: 0;
         right: 0;
+        z-index: -1;
         background-size: cover;
         background-position: center;
-        transform: scale(1.1);
-        transition: 2s;
+        transform: scale(1.05);
+        transition: 1s;
       }
       &.img1 {
         &::before {
@@ -58,7 +57,6 @@
           background-image: url("../images/1592266183185.webp");
         }
       }
-    }
       .description {
         height: 100vh;
         display: flex;
@@ -85,6 +83,7 @@
         }
       }
     }
+  }
   .project {
     .item {
       background-position: center;
@@ -271,4 +270,8 @@
   }
 }
 
-
+#fp-nav {
+  li:last-child {
+    display: none;
+  }
+}

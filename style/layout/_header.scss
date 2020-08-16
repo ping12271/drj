@@ -21,10 +21,13 @@
       align-items: center;
       .plus {
         position: relative;
-        margin-top: 30px;
+        top: 30px;
         display: flex;
         width: 28px;
         height: 28px;
+        .open-side-menu & {
+          visibility: hidden;
+        }
         span {
           display: block;
           position: absolute;
@@ -42,87 +45,70 @@
             top: 5px;
           }
         }
-        .open-side-menu & {
-          display: none;
-        }
       }
 
       .all-menu {
-        position: relative;
-        width: 48px;
-        height: 48px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        position: absolute;
+        top: 50%;
+        margin-top: -24px;
+        padding: 20px;
         cursor: pointer;
         span {
-          position: absolute;
           display: block;
           width: 24px;
           height: 1px;
           background-color: #000;
+          transition: 0.3s;
+          + span {
+            margin-top: 7.5px;
+          }
           &:nth-child(1) {
-            top: 15px;
+            .open-side-menu & {
+              transform: rotate(45deg);
+              transform-origin: 0;
+            }
           }
           &:nth-child(2) {
-            top: 23px;
+            .open-side-menu & {
+              transform: translateX(-30px);
+              opacity: 0;
+            }
           }
           &:nth-child(3) {
-            top: 31px;
+            .open-side-menu & {
+              transform: rotate(-45deg);
+              transform-origin: 0;
+            }
           }
-          .open-side-menu & {
-            display: none;
-
-          }
-        }
-      }
-      .close {
-        position: relative;
-        display: none;
-        cursor: pointer;
-        &::before,
-        &::after {
-          position: absolute;
-          content: '';
-          background-color: #000;
-        }
-        &::before {
-          width: 24px;
-          height: 1px;
-          transform: rotate(-45deg);
-          right: -12px;
-        }
-        &::after {
-          width: 24px;
-          height: 1px;
-          transform: rotate(45deg);
-          left: -12px;
-        }
-        .open-side-menu & {
-          display: block;
         }
       }
 
       .icons {
+        position: relative;
+        bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         a {
-          width: 29px;
-          height: 29px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 30px 5px;
+          display: inline-block;
+          + a {
+            margin-top: 30px;
+          }
         }
         .cart {
+          width: 23px;
+          height: 29px;
           background: url("../images/ico_common.webp") -89px 0 no-repeat;
         }
         .search {
-
+          width: 23px;
+          height: 23px;
           background: url("../images/ico_common.webp") -153px 0 no-repeat;
         }
         .login {
-          background: url("../images/ico_login_new.webp") 0 0 no-repeat;
-          background-size: 100%;
-          margin-right: 5px;
+          width: 29px;
+          height: 29px;
+          background: url("../images/ico_login_new.webp") 0 0 / 100% auto no-repeat;
         }
       }
     }

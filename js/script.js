@@ -18,13 +18,13 @@ var drjart = {
 
     slider: function () {
         $('.visual,.product-slide,.main-slide').slick({
-            autoplay: true,
             dots: true,
-            infinite: true,
-            speed: 500,
-            fade: true,
             arrows: false,
-        })
+            infinite: true,
+            autoplay: true,
+            speed: 1000,
+            fade: true,
+        });
         var slickCustomEvent = {
             init : function(){
                 slickCustomEvent.initialize()
@@ -72,7 +72,8 @@ var drjart = {
             slidesToScroll: 1,
             asNavFor: '.visual-for',
             centerMode: true,
-            focusOnSelect: true
+            focusOnSelect: true,
+            vertical: true
         });
     },
 
@@ -306,7 +307,6 @@ var drjart = {
                 labels: ["best"]
             },
         ]
-
         const producstDom = products.map(function (item) {
             return `
                 <li>
