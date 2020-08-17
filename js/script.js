@@ -13,7 +13,6 @@ var drjart = {
         drjart.getScroll();
         drjart.renderProductBest();
         drjart.renderProductBenefit();
-
     },
 
     slider: function () {
@@ -350,6 +349,6 @@ var drjart = {
         })
 
         $('.product-items.benefit ul').html(producstDom);
-    }
+    },
 
 };

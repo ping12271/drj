@@ -1157,8 +1157,9 @@ body {
   z-index: -1;
   background-size: cover;
   background-position: center;
-  transform: scale(1.05);
-  transition: 1s;
+  transform: scale(1.1);
+  transition-duration: 6s;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 #fullpage .main-slide .item.img1::before {
   background-image: url("../images/1594880874463.webp");
@@ -1299,11 +1300,11 @@ body {
   transform: translateX(-100%);
   transition: 0.4s;
 }
-#fullpage .movie .main .cover {
+#fullpage .movie .main .player {
   position: relative;
-  width: 782px;
+  width: 768px;
 }
-#fullpage .movie .main .cover .play {
+#fullpage .movie .main .player .play {
   position: absolute;
   top: 50%;
   left: 50%;

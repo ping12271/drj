@@ -19,8 +19,9 @@
         z-index: -1;
         background-size: cover;
         background-position: center;
-        transform: scale(1.05);
-        transition: 1s;
+        transform: scale(1.1);
+        transition-duration: 6s;
+        transition-timing-function: cubic-bezier(0,0,.2,1);
       }
       &.img1 {
         &::before {
@@ -181,9 +182,9 @@
           }
         }
       }
-      .cover {
+      .player {
         position: relative;
-        width: 782px;
+        width: 768px;
         .play {
           position: absolute;
           top: 50%;
