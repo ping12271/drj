@@ -21,7 +21,7 @@ var drjart = {
             arrows: false,
             infinite: true,
             autoplay: true,
-            speed: 1000,
+            speed: 2000,
             fade: true,
         });
         var slickCustomEvent = {
