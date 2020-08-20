@@ -1,7 +1,7 @@
 $(function () {
     drjart.init();
 })
-var drjart = {
+const drjart = {
     init: function () {
         drjart.slider();
         drjart.sliderNav();
@@ -24,14 +24,14 @@ var drjart = {
             speed: 2000,
             fade: true,
         });
-        var slickCustomEvent = {
+        const slickCustomEvent = {
             init : function(){
                 slickCustomEvent.initialize()
                 slickCustomEvent.beforeChange()
                 slickCustomEvent.afterChange()
             },
             initialize : function(){
-                var dataIndex = $('[data-slick-index="0"]');
+                const dataIndex = $('[data-slick-index="0"]');
                 dataIndex.find('h1,p,.slide-btn').addClass('fadeInUp');
             },
             beforeChange : function(){
@@ -41,7 +41,7 @@ var drjart = {
             },
             afterChange : function(){
                 $('.fade').on('afterChange', function(event, slick, currentSlide){
-                    var dataIndex = $('[data-slick-index="' + currentSlide + '"');
+                    const dataIndex = $('[data-slick-index="' + currentSlide + '"]');
                     dataIndex.find('h1,p,.slide-btn').addClass('fadeInUp');
                 });
             }
@@ -135,7 +135,7 @@ var drjart = {
 
     getScroll: function () {
         $(window).on("scroll", function () {
-            var scrollTop = $(window).scrollTop();
+            const scrollTop = $(window).scrollTop();
             if(scrollTop > 500) {
                 $("html").addClass("get-scroll");
             } else {
