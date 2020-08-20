@@ -77,7 +77,7 @@ var drjart = {
     },
 
     handleSideMenu: function () {
-        $('.all-menu,.close').on('click', function () {
+        $('.all-menu').on('click', function () {
             $('html').toggleClass('open-side-menu');
         })
         $('.side-header .screen').on('click', function () {
